@@ -22,6 +22,18 @@
 <header>
         <nav>
             <ul>
+                <li>
+                    <div id="audio-player">
+                        <audio id="background-music" loop>
+                            <source src="Pierre.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <button id="play-pause-btn" aria-label="Play/Pause Music">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5">
+                    </div>
+                </li>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -69,8 +81,8 @@
                         </a>
                     </div>
                     <div class="tech-stack">
-                        <span class="tech-icon" title="React"><i class="fab fa-react"></i></span>
-                        <span class="tech-icon" title="Node.js"><i class="fab fa-node-js"></i></span>
+                        <span class="tech-icon" title="React"><i class="fab fa-python"></i></span>
+                        <span class="tech-icon" title="Node.js"><i class="fab fa-pytorch"></i></span>
                         <span class="tech-icon" title="MongoDB"><i class="fas fa-database"></i></span>
                     </div>
                 </div>
@@ -85,7 +97,35 @@
                     <div class="tech-stack">
                         <span class="tech-icon" title="React"><i class="fab fa-react"></i></span>
                         <span class="tech-icon" title="Node.js"><i class="fab fa-node-js"></i></span>
-                        <span class="tech-icon" title="MongoDB"><i class="fas fa-database"></i></span>
+                        <span class="cnn-logo" title="Convolutional Neural Network">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Input layer -->
+        <rect class="cnn-layer" x="5" y="20" width="10" height="60"/>
+        
+        <!-- Convolutional layers -->
+        <rect class="cnn-layer" x="25" y="10" width="10" height="80"/>
+        <rect class="cnn-layer" x="45" y="20" width="10" height="60"/>
+        
+        <!-- Fully connected layer -->
+        <rect class="cnn-layer" x="65" y="30" width="10" height="40"/>
+        
+        <!-- Output layer -->
+        <rect class="cnn-layer" x="85" y="40" width="10" height="20"/>
+        
+        <!-- Connections -->
+        <path class="cnn-connection" d="M15,50 C20,20 20,80 25,50"/>
+        <path class="cnn-connection" d="M35,50 C40,30 40,70 45,50"/>
+        <path class="cnn-connection" d="M55,50 C60,40 60,60 65,50"/>
+        <path class="cnn-connection" d="M75,50 C80,45 80,55 85,50"/>
+        
+        <!-- Nodes -->
+        <circle class="cnn-node" cx="10" cy="50" r="3"/>
+        <circle class="cnn-node" cx="30" cy="50" r="3"/>
+        <circle class="cnn-node" cx="50" cy="50" r="3"/>
+        <circle class="cnn-node" cx="70" cy="50" r="3"/>
+        <circle class="cnn-node" cx="90" cy="50" r="3"/>
+    </svg>
+</span>
                     </div>
                 </div>
                 <div class="project-card">
@@ -113,20 +153,27 @@
             <div class="timeline-container">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>2021 - Present</h3>
-                        <p>Cyberpunk Web Developer at NeoTokyo Inc.</p>
+                        <h3>2024 - Present</h3>
+                        <p>M.S.c student of computer science at University of Maine Orono</p>
+                    </div>
+                </div>
+                <div clas
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2024 - 2024</h3>
+                        <p>Software Developer - BBCC. Helping Maine startups develop and test innovative software ideas</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>2019 - 2021</h3>
-                        <p>AI Interface Designer at Tyrell Corporation</p>
+                        <h3>2023 - Present</h3>
+                        <p>Research Assistant - UMaine PERC_Lab. R&D of NLP tools for a privacy focused SDLC</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>2017 - 2019</h3>
-                        <p>Holographic UX Specialist at Bebop Systems</p>
+                        <h3>2021 - 2024</h3>
+                        <p>Undergraduate student of computer science at the University of Maine Orono</p>
                     </div>
                 </div>
                 <!-- Add more timeline items as needed -->
