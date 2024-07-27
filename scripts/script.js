@@ -108,5 +108,26 @@ function createParticles() {
     }
 }
 
-// Call this function when the page loads
 document.addEventListener('DOMContentLoaded', createParticles);
+
+const techIcons = document.querySelectorAll('.tech-icon');
+techIcons.forEach(icon => {
+    icon.addEventListener('mouseenter', (e) => {
+        const tooltip = document.createElement('div');
+        tooltip.className = 'tooltip';
+        tooltip.textContent = e.target.getAttribute('title');
+        document.body.appendChild(tooltip);
+
+        const iconRect = e.target.getBoundingClientRect();
+        tooltip.style.top = `${iconRect.top - tooltip.offsetHeight - 10}px`;
+        tooltip.style.left = `${iconRect.left + iconRect.width / 2 - tooltip.offsetWidth / 2}px`;
+    });
+
+    icon.addEventListener('mouseleave', () => {
+        const tooltip = document.querySelector('.tooltip');
+        if (tooltip) {
+            tooltip.remove();
+        }
+    });
+});
+// Call this function when the page loads
