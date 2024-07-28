@@ -131,3 +131,92 @@ techIcons.forEach(icon => {
     });
 });
 // Call this function when the page loads
+
+document.addEventListener('DOMContentLoaded', function() {
+    const phrases = [
+      "Machine learning researcher",
+      "Aspiring software building proffesional"
+    ];
+    const typingText = document.getElementById('typingText');
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let isPaused = false;
+  
+    function typePhrase() {
+      const currentPhrase = phrases[phraseIndex];
+      
+      if (isPaused) {
+        setTimeout(typePhrase, 2000); // Pause for 2 seconds
+        isPaused = false;
+        return;
+      }
+  
+      if (isDeleting) {
+        typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+      }
+  
+      typingText.style.borderRight = '2px solid var(--primary-color)';
+  
+      let typingSpeed = isDeleting ? 50 : 100;
+  
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        isPaused = true;
+        isDeleting = true;
+        return setTimeout(typePhrase, 1000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
+  
+      setTimeout(typePhrase, typingSpeed);
+    }
+  
+    typePhrase();
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    function animateSkills() {
+      const skillBars = document.querySelectorAll('.skill-bar');
+      
+      skillBars.forEach(bar => {
+        const skill = bar.getAttribute('data-skill');
+        bar.style.setProperty('--skill-percent', skill + '%');
+        
+        setTimeout(() => {
+          bar.style.width = skill + '%';
+        }, 300);
+      });
+    }
+  
+    // Trigger the animation when the skills section is in view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateSkills();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+  
+    const skillsSection = document.querySelector('.key-skills');
+    if (skillsSection) {
+      observer.observe(skillsSection);
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const skillButtons = document.querySelectorAll('.skill-button');
+    
+    skillButtons.forEach(button => {
+      const skillLevel = button.getAttribute('data-skill');
+      const fillPercentage = skillLevel + '%';
+      
+      // Set the clip-path to fill the border based on skill level
+      button.style.setProperty('--fill-percentage', fillPercentage);
+      button.querySelector('::after').style.clipPath = `polygon(0 0, ${fillPercentage} 0, ${fillPercentage} 100%, 0 100%)`;
+    });
+  });
