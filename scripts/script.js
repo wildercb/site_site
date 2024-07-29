@@ -60,7 +60,7 @@ function typeWriter(element, text, speed) {
 }
 
 const mainTitle = document.querySelector('#home h1');
-typeWriter(mainTitle, "Wilder Baldwin", 100);
+//typeWriter(mainTitle, "Wilder Baldwin", 100);
 
 // Parallax effect for projects
 window.addEventListener('scroll', () => {
@@ -208,15 +208,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const skillButtons = document.querySelectorAll('.skill-button');
-    
-    skillButtons.forEach(button => {
-      const skillLevel = button.getAttribute('data-skill');
-      const fillPercentage = skillLevel + '%';
-      
-      // Set the clip-path to fill the border based on skill level
-      button.style.setProperty('--fill-percentage', fillPercentage);
-      button.querySelector('::after').style.clipPath = `polygon(0 0, ${fillPercentage} 0, ${fillPercentage} 100%, 0 100%)`;
-    });
-  });
+  
